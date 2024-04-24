@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header id="header" class="header">
+        <!-- Hit tap to see the skip to main button immidaitly after loading before doing any thing to see it -->
+        <a href="#offerings" class="skip">Skip to main content</a> 
+        <nav class="navbar">
+            <!-- Logo -->
+            <h1 class="nav-logo">
+                <a href="./index.html">
+                    <img class="nav-logo-desktop" src="./img/logo.png" alt="Gelos Enterprises">
+                    <img class="nav-logo-mobile" src="./img/mobile-logo.png" alt="Gelos Enterprises">
+                </a>
+            </h1>
+            <!-- Search Form -->
+            <form class="search-form" action="#" method="GET">
+                <label id="search-label" for="search">search</label>
+                <input type="text" id="search" name="search" placeholder="Search...">
+                <img src="./img/search.svg" alt="search-icon">
+            </form>
+            <!-- Menu with Links -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#header" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#offerings" class="nav-link">Offerings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#company-values" class="nav-link"> Values</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact-us" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
+            <!-- Hamburger Button -->
+            <div class="hamburger-container">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Carousel -->
+    <div class="carousel">
+        <div class="list">
+            <div class="carousel-item" style="background-image: url('./img/city1.jpg')">
+                <div class="content">
+                    <h2>Improving operations through Gelos products &amp; services</h2>
+                    <button onclick="goToSlidePage('slide-1')">Read More</button>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('./img/city2.jpg')">
+                <div class="content">
+                    <h2>Solving business problems</h2>
+                    <button id="know-more" onclick="goToSlidePage('slide-2')">Know More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Next and previous buttons -->
+        <div class="buttons">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+        </div>
+        <!-- Indicators -->
+        <ul class="indicators">
+            <li class="active"></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- Accordion -->
+    <section id="offerings">
+        <!-- Title -->
+        <h2 class="accordion-header">Company Offerings</h2>
+        <div class="accordion">
+            <!-- First item -->
+            <div class="accordion-item">
+                <div class="accordion-item-header">
+                    <img src="./img/mobile.jpg" alt="mobile-image">
+                    <h2>Digital Transformation</h2>
+                </div>
+                <div class="accordion-item-body">
+                    <p class="accordion-item-body-content">
+                        To help our clients leverage the state-of-art technologies, we provide a tailored approach to enable change in the digital space. Our prior works include developing mobile applications, website applications, and organisation software development, among other digital capabilities. To know more, <a href="#contact-us" id="accordion-link">contact us</a>.
+                    </p>
+                </div>
+            </div>
+            <!-- Second item -->
+            <div class="accordion-item">
+                <div class="accordion-item-header">
+                    <img src="./img/server.jpg" alt="server-image">
+                    <h2>Cloud Services</h2>
+                </div>
+                <div class="accordion-item-body">
+                    <p class="accordion-item-body-content">
+                        Our Cloud programs include a range of services from full application development platforms to servers, storage, and virtual desktops. We offer the following:
+                    </p>
+                    <ol class="accordion-item-body-content">
+                        <li>Software as a service (SaaS)</li>
+                        <li>Platform as a service (PaaS)</li>
+                        <li>Infrastructure as a service (IaaS)</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- Third item -->
+            <div class="accordion-item">
+                <div class="accordion-item-header">
+                    <img src="./img/robot.jpg" alt="robot-image">
+                    <h2>Artificial intelligence</h2>
+                </div>
+                <div class="accordion-item-body">
+                    <p class="accordion-item-body-content">
+                        Artificial intelligence services at Gelos can help you drive smart evolution of your workflows, technology and the entire organisation. Our industry experts help you implement a data-first strategy, augment with third-party sources, and operationalise and accelerate AI integration across your enterprise to generate positive business growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards -->
+    <section id="company-values">
+        <h2 class="accordion-header">Company Values</h2>
+        <div class="company-values-cards">
+            <!-- First card -->
+            <div class="company-value">
+                <img src="./img/truth.jpg" alt="truth-image">
+                <h2>Integrity</h2>
+                <p>We are committed to our values and protect our company at an organizational level.</p>
+            </div>
+            <!-- Second card -->
+            <div class="company-value">
+                <img src="./img/diversity.jpg" alt="diversity-image">
+                <h2>Inclusivity</h2>
+                <p>We strongly believe in diversity as the core of our growth. Our policies hold zero tolerance towards discrimination.</p>
+            </div>
+            <!-- Third card -->
+            <div class="company-value">
+                <img src="./img/creative.jpg" alt="creative-image">
+                <h2>Innovation</h2>
+                <p>Innovation is one of our core values. Our culture imbues curiosity, technological ingenuity, and adaptability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conact Us -->
+    <section id="contact-us">
+        <h2 class="accordion-header">Contact Us</h2>
+        <div class="contact-us">
+            <div class="contact-us-info">
+                <!-- Contact details -->
+                <div class="contact-details">
+                    <p>Ph: 0123456789</p>
+                    <p>Email: gelos@gelos.com</p>
+                    <p>Address: 5 Blah Rd, Sydny NSW 2000</p>
+                </div>
+                <!-- Map -->
+                <div class="location">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6626.568038899356!2d151.21338696457534!3d-33.85657054312424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sau!4v1712716652353!5m2!1sen!2sau" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <!-- Header -->
+                <div class="contacut-us-header">
+                    <h3>Improving operations through Gelos products &amp; services</h3>
+                    <button onclick="goToSlidePage('slide-1')">Read More</button>
+                </div>
+            </div>
+            <!-- The form -->
+            <div class="contact-us-form">
+                <form id="contact-form" onsubmit="return validateForm()">
+                    <!-- Name -->
+                    <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" id="name" name="name" maxlength="100" required placeholder="Enter your name" autocomplete="on">
+                      <p id="name-error"></p>
+                    </div>
+                    <!-- Email -->
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" required placeholder="Enter your email" autocomplete="on">
+                      <p id="email-error"></p>
+                    </div>
+                    <!-- Phone number -->
+                    <div class="form-group">
+                      <label for="phone">Phone Number:</label>
+                      <input type="text" id="phone" name="phone" maxlength="10" required placeholder="Enter your phone number" autocomplete="on">
+                      <p id="phone-error"></p>
+                    </div>
+                    <!-- Message -->
+                    <div class="form-group">
+                      <label for="message">Message:</label>
+                      <textarea id="message" name="message" maxlength="300" required placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" id="submit">submit</button>
+                  </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Gelos Enterprises</p>
+        <button id="to-top" data-target="header">top</button>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
