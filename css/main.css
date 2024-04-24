@@ -1,1 +1,692 @@
+:root{
+    --Gelos-Gold: rgb(221, 171, 94);
+    --Gelos-Bronze: rgb(160, 132, 99);
+    --Gelos-Charcoal: rgb(66, 71, 84);
+    --Gelos-Blue: rgb(7, 122, 153);
+    --Gelos-Gold-Shade: rgb(208, 139, 32);
+    --Gelos-Gold-Tint: rgb(238, 213, 174);
+    --Gelos-Blue-Tint: rgb(148, 178, 191);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Calibri", sans-serif;
+}
 
+p, .accordion-item-body ol, label, #slide-body{
+    font-size: 20px;
+}
+
+::placeholder{
+    font-size: 18px;
+}
+
+/* Skip to main link design */
+.skip {
+    position: absolute;
+    left: -10000px;
+    top: 80px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 10;
+}
+.skip:focus {
+    left: 10px;
+    width: auto;
+    height: auto;
+    color: red;
+}
+
+/* Add gold outline to the forms and the textarea */
+input:focus, textarea:focus {
+    outline-color: var(--Gelos-Gold);
+}
+
+/** Navbar Design **/
+.navbar {
+    background-color: var(--Gelos-Charcoal);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 70px;
+    padding-inline: 15px;
+    gap: 10px;
+    z-index: 100;
+}
+
+/** Logo Design **/
+.nav-logo{
+    align-self: center;
+}
+/* Mobile logo */
+img.nav-logo-mobile{
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: block;
+}
+
+/* Desktop logo */
+img.nav-logo-desktop{
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    display: none;
+}
+
+/** Design Nav Items **/
+/** Links **/
+nav li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+nav a{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+
+/** Sections links**/
+.nav-item{
+    padding-inline: 1.5rem;
+    align-content: center;
+    padding-block: 10px;
+    width: 100%;
+}
+.nav-link{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: white;
+}
+
+/** Hamburger button **/
+.hamburger-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hamburger{
+    display: block;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/** Hamburger Menu **/
+.nav-menu{
+    background-color: var(--Gelos-Charcoal);
+    display: flex;
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow:
+    0 10px 27px rgba(0, 0, 0, 0.05);
+}
+.nav-menu.active {
+    right: 0;
+}
+
+/** Search Form **/
+#search-label{
+    display: none;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    /**means left in ltr and right in rtl**/
+    margin-inline-start: auto;
+    margin-inline-end: 10px;
+}
+.search-form img {
+    margin-left: 0.5rem;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    filter: invert(100%);
+}
+.search-form input[type="text"]{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100px;
+}
+
+/* Carousel */
+/* Design and give the carousel full width */
+.carousel{
+    margin-top: 70px;
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+.carousel .list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: 1s;
+}
+
+.carousel .carousel-item {
+    position: relative;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+/* Design and give the images full width */
+
+
+/* Design the contents and gives position */
+.carousel .carousel-item .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+}
+.carousel .carousel-item h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.carousel .carousel-item button {
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#know-more{
+    background-color: green;
+}
+
+/* Design next and previous buttons */
+.carousel .buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.carousel .buttons button{
+    display: none;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+/* Design the indicators */
+.carousel .indicators{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.carousel .indicators li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.carousel .indicators li.active{
+    width: 30px;
+}
+
+
+/* Accordion */
+.accordion-header{
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2rem;
+}
+.accordion{
+    width: 90%;
+    margin: 2rem auto;
+}
+.accordion-item{
+    background-color: white;
+    color: #111;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+.accordion-item-header{
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.accordion-item-header img{
+    height: 60px;
+    width: 60px;
+    border-radius: 0.5rem;
+    margin-right: 10px;
+}
+
+/* add plus sign */
+.accordion-item-header::after{
+    content: "\002B";
+    font-weight: bold;
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+}
+
+/* add minus sign */
+.accordion-item-header.active::after{
+    content: "\2212";
+}
+
+/* Design the accordion body */
+.accordion-item-body{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+.accordion-item-body-content{
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid #34495e;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+/* design the ul in the second item */
+.accordion-item-body ol{
+    padding-top: 0;
+    padding-left: 6rem;
+    border-top: none;
+}
+
+/* Cards */
+.company-values-cards {
+    margin: 2rem auto;
+    width: 90%;
+}
+.company-value {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    margin-bottom: 15px;
+}
+.company-value h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Description styling */
+.company-value p {
+    line-height: 1.5;
+}
+.company-value img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 10px;
+}
+
+/* Contact us section */
+.contact-us{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* The outer div */
+.contact-us-info, .contact-us-form{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+.contact-details{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #34495e;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+.contact-us-info p{
+    line-height: 1.5;
+}
+
+/* design the map */
+.contact-us-info iframe{
+    height: 300px;
+    margin-block: 10px;
+}
+
+/* Design the header */
+.contacut-us-header{
+    padding-top: 10px;
+    border-top: 1px solid #34495e;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+/* Design the form */
+.form-group {
+    padding-block: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Design the inputs and the message */
+#name , input[type="email"], #phone,  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Design the buttons */
+.contact-us-info button, .contact-us-form button {
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.contact-us-info button{
+    background-color: red;
+    margin-top: 20px;
+}
+.contact-us-form button{
+    background-color: var(--Gelos-Blue);
+}
+
+/* Design the error messages div */
+/* #error-message, */
+#phone-error, #name-error, #email-error{
+    color: red;
+}
+
+/* Footer */
+footer{
+    text-align: center;
+    padding: 10px;
+    background-color: var(--Gelos-Charcoal);
+}
+footer p{
+    color: #fff;
+}
+footer button{
+    font-size: 16px;
+    padding: 5px 30px;
+    margin-top: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--Gelos-Gold-Shade);
+    cursor: pointer;
+}
+
+/* Slide Page Design */
+/* make sure that the body takes full height */
+#page-body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Design the content */
+.slide-content{
+    margin-top: 100px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+#slide-image{
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+}
+#slide-title{
+    color: var(--Gelos-Gold-Shade);
+    margin-block: 20px;
+    font-size: 36px;
+}
+#slide-body{
+    margin-bottom: 20px;
+}
+
+/* Make sure the footer is at the bottom always */
+#page-footer{
+    margin-top: auto;
+}
+
+/* Homepage arrow */
+#arrow{
+    content: "\2190";
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Media queries */
+@media screen and (min-width: 380px){
+    /* Adjust search form width */
+    .search-form input[type="text"]{
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 500px){
+    /** toggle Logo Design **/
+    img.nav-logo-mobile{
+    display: none;
+    }
+    img.nav-logo-desktop{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px){
+    /* Adjust carousel height */
+    .carousel{
+        height: 600px;
+    }
+
+    /* Adjust the image size in the slide page */
+    #slide-image{
+        height: 600px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /* Hide the hamburger buuton */
+    .hamburger-container{
+        display: none;
+    }
+
+    /* Show nav items in the navbar */
+    .nav-menu{
+        right: 0;
+        flex-direction: row;
+        top: 0;
+        position: relative;
+        width: auto;
+        min-width: 600px;
+    }
+    .nav-item{
+        align-self: stretch;
+    }
+
+    /* Adjust search form width */
+    .search-form input[type="text"]{
+        width: 140px;
+    }
+
+    /* Adjust carousel height */
+    .carousel{
+        height: 800px;
+    }
+
+    /* Adjust the cards view */
+    .company-values-cards{
+        display: flex;
+        gap: 20px;
+    }
+
+    /* Adjust the contuct us view */
+    .contact-us{
+        display: flex;
+        gap: 20px;
+    }
+    .contact-us-info, .contact-us-form{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    .contact-us-info .location{
+        margin-block: auto;
+    }
+
+    /* Adjust the image size in the slide page */
+    #slide-image{
+        height: 800px;
+    }
+    
+}
+
+@media screen and (min-width: 1200px) {
+    /* Change text sizes */
+    p, .accordion-item-body ol, label, #slide-body{
+        font-size: 24px;
+    }
+
+    /* Change placeholder size */
+    ::placeholder{
+        font-size: 20px;
+    }
+
+    /* add hover effect to the nav links */
+    .nav-item{
+        transition: all 0.3s linear;
+    }
+    .nav-item:hover{
+        background-color: var(--Gelos-Gold);
+    }
+
+    /* Adjust search form width */
+    .search-form input[type="text"]{
+        width: 200px;
+    }
+
+    /* Show previous and next buttons */
+    .carousel .buttons button{
+        display: inline-block;
+    }
+
+    /* add hover effect to the accordion buttons */
+    .carousel .carousel-item button, #know-more {
+        transition: background-color 0.3s ease-in-out;
+    }
+    .carousel .carousel-item button:hover {
+        background-color: darkred;
+    }
+    #know-more:hover {
+        background-color: rgb(0, 75, 0);
+    }
+
+    /* Adjust the accordion, cards, and the contuct us width */
+    .accordion, .company-values-cards ,.contact-us {
+        width: 80%;
+    }
+
+    /* Add hover and scale effect to the value cards */
+    .company-value{
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+    .company-value:hover {
+        background-color: var(--Gelos-Gold-Tint);
+        transform: translateY(-5px) scale(1.05);
+    }
+    
+    /* Add hover effect to the buttons in the contact us section */
+    .contact-us-info button:hover {
+        background-color: darkred;
+    }
+    .contact-us-form button:hover{
+        background-color: darkblue;
+    }
+
+    /* Give the slide image and the text a max width so they won't stretch more on bigger screens in the slide page*/
+    #slide-image, #slide-body{
+        max-width: 1200px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    /* Adjust the accordion, cards, and the contuct us width */
+    .accordion, .company-values-cards ,.contact-us {
+        width: 70%;
+    }
+}
