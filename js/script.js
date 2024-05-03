@@ -12,6 +12,8 @@ var items = document.querySelectorAll('.carousel .list .carousel-item');
 var next = document.getElementById('next');
 var prev = document.getElementById('prev');
 var indicators = document.querySelectorAll('.carousel .indicators li');
+const readMoreButton = document.querySelector("#carousel-read-more");
+const knowMoreButton = document.querySelector("#know-more");
 
 var lengthItems = items.length;
 var active = 0;
@@ -23,6 +25,9 @@ var touchendX = 0;
 // Accordion Items
 const accordionItemHeader = document.querySelectorAll(".accordion-item-header");
 var accordionLink = $("#accordion-link");
+
+// Contact Us Items
+const ContactUsReadMoreButton = document.querySelector("#contact-us-read-more");
 
 // Footer Button
 var toTopButton = $("#to-top");
@@ -112,24 +117,32 @@ indicators.forEach((indicator, index) => {
 // Function to handle window resize
 window.onresize = reloadCarousel;
 
+// Function to make the carousel buttons direct the user to a different page
+function goToSlidePage(event) {
+    const title = event.currentTarget.dataset.title;
+    window.location.href = "slide-page.html?title=" + title;
+}
+
+readMoreButton.addEventListener("click", goToSlidePage, false);
+knowMoreButton.addEventListener("click", goToSlidePage, false);
+
 // Touch event listeners for swipe gesture
 carousel.addEventListener('touchstart', function(event) {
-    touchstartX = event.changedTouches[0].screenX;
+    if(event.target.tagName !== "BUTTON"){
+        touchstartX = event.changedTouches[0].screenX;
+    }
 }, false);
 
 carousel.addEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
-    handleSwipe();
+    if(event.target.tagName !== "BUTTON"){
+        touchendX = event.changedTouches[0].screenX;
+        handleSwipe();
+    }
 }, false);
 
 function handleSwipe() {
     // Always move to the next slide on swipe
     changeSlide();
-}
-
-// Function to make the carousel buttons direct the user to a different page
-function goToSlidePage(title) {
-    window.location.href = "slide-page.html?title=" + title; 
 }
 // End of Carousel Code
 
@@ -220,6 +233,9 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         document.getElementById("contact-form").reset();
     }
 });
+
+// Make the read more button go to slide-page code
+ContactUsReadMoreButton.addEventListener("click", goToSlidePage, false);
 // End of Contact Us Code
 
 // Footer Code
